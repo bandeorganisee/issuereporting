@@ -5,16 +5,110 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "react-router-config": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "reactstrap": "^8.0.0",
+    "simple-line-icons": "^2.4.1",
+    "flag-icon-css": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "stylelint": "^10.0.1",
+    "stylelint-a11y": "^1.2.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.1.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.2",
+    "stylelint-order": "^3.0.0",
+    "stylelint-scss": "^3.6.0",
+    "stylelint-webpack-plugin": "^0.10.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-rational-order"
+    ],
+    "plugins": [
+      "stylelint-scss",
+      "stylelint-order",
+      "stylelint-a11y",
+      "stylelint-config-rational-order/plugin",
+      "stylelint-no-unsupported-browser-features",
+      "stylelint-declaration-block-no-ignored-properties"
+    ],
+    "rules": {
+      "no-empty-source": null,
+      "function-calc-no-invalid": true,
+      "selector-attribute-quotes": "always",
+      "declaration-no-important": true,
+      "property-no-vendor-prefix": true,
+      "value-no-vendor-prefix": true,
+      "function-url-quotes": "always",
+      "function-url-scheme-blacklist": [
+        "ftp",
+        "/^http/",
+        "/^(data:)([\\w/\\+]+);(charset=[\\w-]+|base64).*,(.*)/gi"
+      ],
+      "at-rule-no-vendor-prefix": true,
+      "selector-no-vendor-prefix": true,
+      "media-feature-name-no-vendor-prefix": true,
+      "at-rule-no-unknown": null,
+      "scss/at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "/^extend/"
+          ]
+        }
+      ],
+      "scss/declaration-nested-properties": "never",
+      "scss/selector-no-redundant-nesting-selector": true,
+      "scss/at-mixin-argumentless-call-parentheses": "always",
+      "scss/no-duplicate-dollar-variables": true,
+      "a11y/no-obsolete-attribute": true,
+      "a11y/no-obsolete-element": true,
+      "a11y/media-prefers-reduced-motion": true,
+      "a11y/no-outline-none": true,
+      "a11y/selector-pseudo-class-focus": true,
+      "plugin/rational-order": [
+        true,
+        {
+          "border-in-box-model": false,
+          "empty-line-between-groups": false
+        }
+      ],
+      "plugin/no-unsupported-browser-features": [
+        true,
+        {
+          "severity": "warning",
+          "browsers": [
+            "> 1%",
+            "last 2 versions",
+            "not ie <= 11",
+            "not OperaMini all",
+            "not OperaMobile > 0",
+            "not ExplorerMobile > 0",
+            "not BlackBerry <= 7"
+          ],
+          "ignore": [
+            "user-select-none"
+          ]
+        }
+      ],
+      "plugin/declaration-block-no-ignored-properties": true
+    }
   },
   "browserslist": {
     "production": [
