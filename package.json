@@ -30,7 +30,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "patch": "npm version patch -m \"release: %s\"",
+    "minor": "npm version minor -m \"release: %s\"",
+    "major": "npm version major -m \"release: %s\""
   },
   "eslintConfig": {
     "extends": "react-app"
